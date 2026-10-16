@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} | Eleventy Blog</title>
+  <meta name="description" content="{{ description or 'A basic Eleventy blog boilerplate.' }}" />
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="{{ '/' | url }}">Eleventy Blog</a>
+      <span class="links">
+        <a href="{{ '/' | url }}" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/blog/' | url }}" {% if "/blog" in page.url or "/posts" in page.url %}aria-current="page"{% endif %}>Blog</a>
+        <a href="{{ '/about/' | url }}" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+      </span>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with <a href="https://www.11ty.dev/">Eleventy</a>. Edit <code>src/</code> to make it yours.</p>
+  </footer>
+</body>
+</html>

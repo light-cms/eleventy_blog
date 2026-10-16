@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <h1>{{ title }}</h1>
+  {% if date %}<p class="muted"><time>{{ date | readableDate }}</time></p>{% endif %}
+  {% if description %}<p class="muted">{{ description }}</p>{% endif %}
+  <hr />
+  {{ content | safe }}
+  <p><a href="{{ '/blog/' | url }}">&larr; Back to blog</a></p>
+</article>

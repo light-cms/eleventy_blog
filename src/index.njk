@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Home
+description: A basic displayable Eleventy blog boilerplate.
+---
+<section class="hero">
+  <h1>Hello, Eleventy.</h1>
+  <p>A minimal blog boilerplate with a home page, about page, and two sample posts.</p>
+  <p>
+    <a class="button" href="{{ '/blog/' | url }}">Read the blog</a>
+    <a class="button secondary" href="{{ '/about/' | url }}">About</a>
+  </p>
+</section>
+
+<section>
+  <h2>Latest posts</h2>
+  <ul class="post-list">
+  {%- for post in collections.posts | reverse -%}
+    <li>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      <span class="muted"> — {{ post.date | readableDate }}</span>
+    </li>
+  {%- endfor -%}
+  </ul>
+</section>

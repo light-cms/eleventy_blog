@@ -1,0 +1,7 @@
+[tools]
+"github:sass/dart-sass" = "latest"
+bun = "latest"
+
+[tasks]
+install = "bun install"
+build = "bun run build"
